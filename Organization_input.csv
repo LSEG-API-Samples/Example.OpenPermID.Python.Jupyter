@@ -1,0 +1,10 @@
+LocalID,Standard Identifier,Name,Country,Street,City,PostalCode,State,Website
+1,,Apple,US,"Apple Campus, 1 Infinite Loop",Cupertino,95014,California,
+2,,Apple,,,,,,
+3,,Teva Pharmaceutical Industries Ltd,IL,,Petah Tikva,,,
+4,,Tata Sky,IN,,,,,
+5,RIC:IBM.N|Ticker:IBM,,,,,,,
+6,Ticker:MSFT,,,,,,,
+7,LEI:INR2EJN1ERAN0W5ZP974,,,,,,,
+8,Ticker:FB&&Exchange:NSM,,,,,,,
+9,Ticker:AAPL&&MIC:XNGS,,,,,,,
