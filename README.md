@@ -21,123 +21,7 @@ opid = OpenPermID()
 opid.set_access_token("<ACCESS TOKEN>")
 ```
 
-## 1. Entity Lookup
-
-If you know a PermID of an entity, you can use the **lookup** method to retrieve the entity description. 
-
-It accepts three parameters:
-
-|Parameter Name|Required|Description|
-|--------------|--------|-----------|
-|id|Yes|The PermID used to lookup e.g. 1-5064690523|
-|format|No|The format of the output. Possible values are **dataframe**, **json-ld**, or **turtle**. The default value is **dataframe**|
-|orient|No|The format of the returned data frame. Possible values are **row**, or **column**. The default value is **row**|
-
-This function returns a tuple containing a result and error string. The result could be a data frame, JSON, or turtle string depending on the **format** parameter.
-
-The following code calls the **lookup** method to retrieve the entity information of the 1-5064690523 PermID with the **column** orient parameter.
-
-
-```python
-output,err = opid.lookup("1-5064690523", orient="column")
-output
-```
-
-
-
-
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>1-5064690523</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>@id</th>
-      <td>https://permid.org/1-5064690523</td>
-    </tr>
-    <tr>
-      <th>@type</th>
-      <td>tr-org:Organization</td>
-    </tr>
-    <tr>
-      <th>mdaas:HeadquartersAddress</th>
-      <td>3 Times Sq\n\n\nNEW YORK\nNEW YORK\n10036-6564\n</td>
-    </tr>
-    <tr>
-      <th>mdaas:RegisteredAddress</th>
-      <td>200 Bellevue Pkwy Ste 210\n\n\nWILMINGTON\nDEL...</td>
-    </tr>
-    <tr>
-      <th>tr-common:hasPermId</th>
-      <td>5064690523</td>
-    </tr>
-    <tr>
-      <th>hasPrimaryInstrument</th>
-      <td>https://permid.org/1-21661915727</td>
-    </tr>
-    <tr>
-      <th>hasActivityStatus</th>
-      <td>tr-org:statusActive</td>
-    </tr>
-    <tr>
-      <th>tr-org:hasHeadquartersPhoneNumber</th>
-      <td>16462234000</td>
-    </tr>
-    <tr>
-      <th>tr-org:hasLEI</th>
-      <td>549300NF240HXJO7N016</td>
-    </tr>
-    <tr>
-      <th>hasLatestOrganizationFoundedDate</th>
-      <td>2018-03-16T00:00:00Z</td>
-    </tr>
-    <tr>
-      <th>hasPrimaryBusinessSector</th>
-      <td>https://permid.org/1-4294952762</td>
-    </tr>
-    <tr>
-      <th>hasPrimaryEconomicSector</th>
-      <td>https://permid.org/1-4294952767</td>
-    </tr>
-    <tr>
-      <th>hasPrimaryIndustryGroup</th>
-      <td>https://permid.org/1-4294952759</td>
-    </tr>
-    <tr>
-      <th>tr-org:hasRegisteredFaxNumber</th>
-      <td>13027985841</td>
-    </tr>
-    <tr>
-      <th>tr-org:hasRegisteredPhoneNumber</th>
-      <td>13027985860</td>
-    </tr>
-    <tr>
-      <th>isIncorporatedIn</th>
-      <td>http://sws.geonames.org/6252001/</td>
-    </tr>
-    <tr>
-      <th>isDomiciledIn</th>
-      <td>http://sws.geonames.org/2635167/</td>
-    </tr>
-    <tr>
-      <th>hasURL</th>
-      <td>https://www.refinitiv.com</td>
-    </tr>
-    <tr>
-      <th>vcard:organization-name</th>
-      <td>Refinitiv US Holdings Inc</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-## 2. Entity Search
+## 1. Entity Search
 
 This function is used to search an entity's PermID value from a string. 
 ```
@@ -316,6 +200,119 @@ output['quotes']
 </table>
 </div>
 
+## 2. Entity Lookup
+
+If you know a PermID of an entity, you can use the **lookup** method to retrieve the entity description. 
+
+It accepts three parameters:
+
+|Parameter Name|Required|Description|
+|--------------|--------|-----------|
+|id|Yes|The PermID used to lookup e.g. 1-5064690523|
+|format|No|The format of the output. Possible values are **dataframe**, **json-ld**, or **turtle**. The default value is **dataframe**|
+|orient|No|The format of the returned data frame. Possible values are **row**, or **column**. The default value is **row**|
+
+This function returns a tuple containing a result and error string. The result could be a data frame, JSON, or turtle string depending on the **format** parameter.
+
+The following code calls the **lookup** method to retrieve the entity information of the 1-5064690523 PermID with the **column** orient parameter.
+
+
+```python
+output,err = opid.lookup("1-5064690523", orient="column")
+output
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>1-5064690523</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>@id</th>
+      <td>https://permid.org/1-5064690523</td>
+    </tr>
+    <tr>
+      <th>@type</th>
+      <td>tr-org:Organization</td>
+    </tr>
+    <tr>
+      <th>mdaas:HeadquartersAddress</th>
+      <td>3 Times Sq\n\n\nNEW YORK\nNEW YORK\n10036-6564\n</td>
+    </tr>
+    <tr>
+      <th>mdaas:RegisteredAddress</th>
+      <td>200 Bellevue Pkwy Ste 210\n\n\nWILMINGTON\nDEL...</td>
+    </tr>
+    <tr>
+      <th>tr-common:hasPermId</th>
+      <td>5064690523</td>
+    </tr>
+    <tr>
+      <th>hasPrimaryInstrument</th>
+      <td>https://permid.org/1-21661915727</td>
+    </tr>
+    <tr>
+      <th>hasActivityStatus</th>
+      <td>tr-org:statusActive</td>
+    </tr>
+    <tr>
+      <th>tr-org:hasHeadquartersPhoneNumber</th>
+      <td>16462234000</td>
+    </tr>
+    <tr>
+      <th>tr-org:hasLEI</th>
+      <td>549300NF240HXJO7N016</td>
+    </tr>
+    <tr>
+      <th>hasLatestOrganizationFoundedDate</th>
+      <td>2018-03-16T00:00:00Z</td>
+    </tr>
+    <tr>
+      <th>hasPrimaryBusinessSector</th>
+      <td>https://permid.org/1-4294952762</td>
+    </tr>
+    <tr>
+      <th>hasPrimaryEconomicSector</th>
+      <td>https://permid.org/1-4294952767</td>
+    </tr>
+    <tr>
+      <th>hasPrimaryIndustryGroup</th>
+      <td>https://permid.org/1-4294952759</td>
+    </tr>
+    <tr>
+      <th>tr-org:hasRegisteredFaxNumber</th>
+      <td>13027985841</td>
+    </tr>
+    <tr>
+      <th>tr-org:hasRegisteredPhoneNumber</th>
+      <td>13027985860</td>
+    </tr>
+    <tr>
+      <th>isIncorporatedIn</th>
+      <td>http://sws.geonames.org/6252001/</td>
+    </tr>
+    <tr>
+      <th>isDomiciledIn</th>
+      <td>http://sws.geonames.org/2635167/</td>
+    </tr>
+    <tr>
+      <th>hasURL</th>
+      <td>https://www.refinitiv.com</td>
+    </tr>
+    <tr>
+      <th>vcard:organization-name</th>
+      <td>Refinitiv US Holdings Inc</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 
 ## 3. Record Matching
